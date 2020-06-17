@@ -6,20 +6,76 @@ namespace Kogane
 	/// <summary>
 	/// ぼよよんと出る動きを管理するクラス
 	/// </summary>
+	[Serializable]
 	public sealed class ElasticMover
 	{
 		//==============================================================================
+		// 変数(SerializeField)
+		//==============================================================================
+		[SerializeField] private float m_amplitude    = default;
+		[SerializeField] private float m_deceleration = default;
+		[SerializeField] private float m_friction     = default;
+		[SerializeField] private float m_targetScale  = 1;
+		[SerializeField] private float m_scale        = 1;
+
+		//==============================================================================
 		// プロパティ
 		//==============================================================================
-		public float Amplitude    { get; set; } // 振幅を取得または設定します
-		public float Deceleration { get; set; } // 減速度を取得または設定します
-		public float Friction     { get; set; } // 摩擦力を取得または設定します
-		public float TargetScale  { get; set; } // 目標値を取得または設定します
-		public float Scale        { get; set; } // 現在値を取得または設定します
+		/// <summary>
+		/// 振幅を取得または設定します
+		/// </summary>
+		public float Amplitude
+		{
+			get => m_amplitude;
+			set => m_amplitude = value;
+		}
+
+		/// <summary>
+		/// 減速度を取得または設定します
+		/// </summary>
+		public float Deceleration
+		{
+			get => m_deceleration;
+			set => m_deceleration = value;
+		}
+
+		/// <summary>
+		/// 摩擦力を取得または設定します
+		/// </summary>
+		public float Friction
+		{
+			get => m_friction;
+			set => m_friction = value;
+		}
+
+		/// <summary>
+		/// 目標値を取得または設定します
+		/// </summary>
+		public float TargetScale
+		{
+			get => m_targetScale;
+			set => m_targetScale = value;
+		}
+
+		/// <summary>
+		/// 現在値を取得または設定します
+		/// </summary>
+		public float Scale
+		{
+			get => m_scale;
+			set => m_scale = value;
+		}
 
 		//==============================================================================
 		// 関数
 		//==============================================================================
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		public ElasticMover()
+		{
+		}
+
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
