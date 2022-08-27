@@ -1,4 +1,4 @@
-# UniElasticMover
+# Kogane Elastic Mover
 
 ぼよよんと出る動きを管理するクラス
 
